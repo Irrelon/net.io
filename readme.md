@@ -20,10 +20,14 @@ environment.
 Net.io was written by Irrelon Software Limited for use with the Isogenic Game Engine (http://www.isogenicengine.com) and
 made open-source so that others can benefit from a high-performance network library designed for realtime gaming.
 
-## License
-Net.io is licensed under the MIT License.
+## What's Next?
+* Encoding is currently only to standard JSON stringify, next level will encode frequently used strings into integers
+* Add origin accept/reject system for tighter security
+* Add more socket types than just websockets for graceful fallback
+* Publish as an NPM module
+* Create better documentation, currently only examples show how to use
 
-## MIT License
+## License (MIT)
 Copyright (c) 2012 Irrelon Software Limited
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
