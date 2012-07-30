@@ -1,0 +1,6 @@
+[submodule "net.io-client"]
+	path = net.io-client
+	url = https://github.com/coolbloke1324/net.io-client.git
+[submodule "net.io-server"]
+	path = net.io-server
+	url = https://github.com/coolbloke1324/net.io-server.git
