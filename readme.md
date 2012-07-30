@@ -10,11 +10,12 @@ Net.io has both a server (written for Node.js) and a client that will operate in
 with JavaScript mobile native wrappers like CocoonJS where there is no access to the DOM.
 
 ## Why Net.io Instead of Socket.io?
-Socket.io is a great library for applications like chat and has built-in support for "channels" etc. Net.io is tailored
-more towards realtime gaming and high-performance apps that need to squeeze all the bandwidth out of a connection that
-they can. Net.io reduces network overhead by intelligently encoding packets instead of adding to the data that a packet
-contains like Socket.io does. The Socket.io client also requires access to the DOM whereas Net.io can run in a non-DOM
-environment.
+Socket.io is a great library for applications like chat and others that do not need to count every byte as precious.
+Socket.io also has built-in support for "channels" which makes sense when writing a chat-centric networking system.
+Net.io is tailored more towards realtime gaming and high-performance apps that need to squeeze all the bandwidth out of
+a connection that they can. Net.io reduces network overhead by intelligently encoding packets instead of adding to the
+data that a packet contains like Socket.io does. The Socket.io client also requires access to the DOM whereas Net.io can
+run in a non-DOM environment.
 
 ## Who Made Net.io?
 Net.io was written by Irrelon Software Limited for use with the Isogenic Game Engine (http://www.isogenicengine.com) and
