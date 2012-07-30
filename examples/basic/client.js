@@ -1,9 +1,11 @@
-// Connect to the server
+// Connect to the server "localhost" on port 2000
 var io = new NetIo.Client('http://localhost:2000');
 
 // Setup event listeners
 io.on('connect', function () {
 	console.log('Connected with session id:', io.id);
+
+	io.send({data:'hello server!'});
 });
 
 io.on('message', function (data) {
