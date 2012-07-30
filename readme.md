@@ -12,10 +12,18 @@ with JavaScript mobile native wrappers like CocoonJS where there is no access to
 ## Why Net.io Instead of Socket.io?
 Socket.io is a great library for applications like chat and others that do not need to count every byte as precious.
 Socket.io also has built-in support for "channels" which makes sense when writing a chat-centric networking system.
+
 Net.io is tailored more towards realtime gaming and high-performance apps that need to squeeze all the bandwidth out of
 a connection that they can. Net.io reduces network overhead by intelligently encoding packets instead of adding to the
-data that a packet contains like Socket.io does. The Socket.io client also requires access to the DOM whereas Net.io can
-run in a non-DOM environment.
+data that a packet contains. Socket.io pads every packet with extra data that it uses to determine the type of message
+you are sending etc, this leads to wasted bytes in your network traffic for high-performance apps.
+
+When you send a data message using Net.io, you know for a fact that the underlying Net.io system has not added any extra
+padding or bytes to your message. Instead Net.io will send your message exactly as you defined it, except where Net.io
+detects that it can reduce your message size further with extra encoding.
+
+The Socket.io client also requires access to the DOM whereas Net.io can run in a non-DOM environment which is important
+for connecting from other Node.js instances and in situations where a DOM is not available such as JS wrapper systems.
 
 ## Who Made Net.io?
 Net.io was written by Irrelon Software Limited for use with the Isogenic Game Engine (http://www.isogenicengine.com) and
@@ -26,7 +34,7 @@ made open-source so that others can benefit from a high-performance network libr
 * Add origin accept/reject system for tighter security
 * Add more socket types than just websockets for graceful fallback
 * Publish as an NPM module
-* Create better documentation, currently only examples show how to use
+* Create better documentation, currently only documentation is the included examples
 
 ## License (MIT)
 Copyright (c) 2012 Irrelon Software Limited
